@@ -2,30 +2,45 @@
 <html>
 
 <head>
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.2/angular.js"></script>
   <script src="index.js"></script>
+  <link rel="stylesheet" href="style.css" />
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
   <title>JS Bin</title>
 </head>
 
 <body>
-  <div ng-app="myApp" ng-controller="myCtrl">
-    
-    <form name='urlForm' ng-submit='onup(urlForm)'>
-      <input placeholder='Type a URL to preview' ng-model='url' />
-      <button type='submit'>Check Website</button>
-    </form>
-    
-    <h1 id="webTitle">{{websiteTitle}}</h1>
-    <div id="webPreview">
-      <a target="_blank" href={{websiteURL}}><img src={{websitePreview}}></a>
+  <center>
+    <div id="hackBody">
+      <div id="mainhead">
+        <h3>Check Your Website</h3>
+        <p1>Enter a website address to get a description of the webpage <br> and if included, a pictrure from the main webpage<br> If you decide the website is valid, click on the picture to travel to that webpage<br> Happy browsing!</p1>
+      </div>
+      <div ng-app="myApp" ng-controller="myCtrl">
+
+        <form name='urlForm' ng-submit='onup(urlForm)'>
+          <input placeholder='Type a URL to preview' ng-model='url' />
+          <button type='submit'>Check Website</button>
+        </form>
+
+        <h1 id="webTitle">{{websiteTitle}}</h1>
+
+        <div class="grid-container">
+          <div class="gridItem" id="webPreview">
+            <p4><b>Website Preview: <br></b></p4>
+            <a target="_blank" href={{websiteURL}}><img src={{websitePreview}}></a>
+          </div>
+          <div class="gridItem">
+            <p3><b>Website Description: <br></b></p3>
+            <p2 id="webDescription">{{websiteDescription}} <br> {{websiteFinePrint}}</p2>
+          </div>
+
+        </div>
+      </div>
     </div>
-    <h2 id="webDescription">{{websiteDescription}}</h2>
-    <h4 id="webFinePrint">{{websiteFinePrint}}</h4>
-
-  </div>
-
+  </center>
 </body>
 
 </html>

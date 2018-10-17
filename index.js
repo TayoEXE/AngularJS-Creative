@@ -15,7 +15,8 @@ app.controller('myCtrl',
                     $scope.websiteDescription = response.data.description;
                     if (response.data.image != "") {
                         $scope.websitePreview = response.data.image;
-                    } else {
+                    }
+                    else {
                         $scope.websitePreview = "Stick.jpg";
                     }
                     $scope.websiteURL = response.data.url;
@@ -23,7 +24,7 @@ app.controller('myCtrl',
                 .catch((err => {
                     console.log("Woops");
                     $scope.websiteName = "Dog.jpg";
-                    
+
                     $scope.websiteTitle = "You've summoned the wrath of the admins";
                     $scope.websiteDescription = "This website really doesn't want you to see what's inside";
                     $scope.websitePreview = "Dog.jpg";
@@ -32,7 +33,4 @@ app.controller('myCtrl',
                 }));
             console.log("in onup");
         };
-
-
-
     });
