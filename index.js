@@ -12,7 +12,15 @@ app.controller('myCtrl',
                     console.log(response);
 
                     $scope.websiteTitle = response.data.title;
-                    $scope.websiteDescription = response.data.description;
+                    
+                    
+                    if (response.data.description != "") {
+                        $scope.websiteDescription = response.data.description;
+                    }
+                    else {
+                        $scope.websiteDescription = "No description provided.";
+                    }
+                    
                     if (response.data.image != "") {
                         $scope.websitePreview = response.data.image;
                     }

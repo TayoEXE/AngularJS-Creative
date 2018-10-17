@@ -34,6 +34,7 @@ p1 {
 img {
     max-height: 400px;
     max-width: 400px;
+    background-color: white;
 }
 
 .grid-container {
@@ -42,4 +43,8 @@ img {
     margin: 15px;
     justify-content: space-evenly;
 
+}
+
+p2 {
+    background-color: white;
 }
